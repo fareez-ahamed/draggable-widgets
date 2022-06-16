@@ -64,21 +64,13 @@ function WidgetContainer({
 }
 
 export function Dashboard() {
+  const [widgets, setWidgets] = useState(WIDGET_LIST);
   const [draggedItemId, setDraggedItemId] = useState(null);
   const [draggedOverContainerId, setDraggedOverContainerId] = useState(null);
-  const [widgets, setWidgets] = useState(WIDGET_LIST);
 
-  const handleDragStart = (id) => {
-    setDraggedItemId(id);
-  };
-
-  const handleDragEntered = (id) => {
-    setDraggedOverContainerId(id);
-  };
-
-  const handleDragLeave = () => {
-    setDraggedOverContainerId(null);
-  };
+  const handleDragStart = (id) => setDraggedItemId(id);
+  const handleDragEntered = (id) => setDraggedOverContainerId(id);
+  const handleDragLeave = () => setDraggedOverContainerId(null);
 
   const handleDrop = () => {
     if (!draggedOverContainerId) {

@@ -23,6 +23,7 @@ function Widget({ content, onDragStart }) {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
+        fontSize: "2rem",
       }}
       onDragStart={onDragStart}
       draggable
